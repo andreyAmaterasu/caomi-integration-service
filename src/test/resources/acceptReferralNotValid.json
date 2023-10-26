@@ -1,0 +1,43 @@
+{
+  "practitioner": {
+    "snils": "13594779916",
+    "fullName": {
+      "middleName": "Андреевич"
+    },
+    "gender": 1
+  },
+  "practitionerRole": {
+    "employmentPeriod": {
+      "start": "2020-01-01",
+      "end": "2022-01-01"
+    }
+  },
+  "patient": {
+    "fullName": {
+      "middleName": "Андреевич"
+    },
+    "address": [
+      {
+        "typeCode": 1,
+        "text": "Ленинградская область, п. Мурино, ул.Оптиков, д.6, кв.101"
+      }
+    ]
+  },
+  "coverage": {
+    "validityPeriod": {
+      "start": "2020-01-01",
+      "end": "2022-01-01"
+    },
+    "medicalInsuranceOrganizationCode": "01003"
+  },
+  "serviceRequest": [
+    {
+      "servicePriorityCode": 2,
+      "authoredOn": "2020-09-10T14:07:18Z",
+      "desiredPeriod": {
+        "end": "2020-01-02T18:00:00Z"
+      },
+      "performerDeviceId": "590101000000012"
+    }
+  ]
+}

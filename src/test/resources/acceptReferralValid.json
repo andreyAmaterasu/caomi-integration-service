@@ -1,0 +1,73 @@
+{
+  "moOid": "1.2.643.5.1.13.13.12.2.77.7799",
+  "referralNumber": "1",
+  "idReferral": "06c68d67-8d62-4fd1-80e5-b73fac46957f",
+  "practitioner": {
+    "medStaffId": "2",
+    "snils": "13594779916",
+    "fullName": {
+      "firstName": "Соловьев",
+      "lastName": "Роман",
+      "middleName": "Андреевич"
+    },
+    "gender": 1,
+    "birthDate": "1991-05-22"
+  },
+  "practitionerRole": {
+    "medStaffRoleId": "3",
+    "active": true,
+    "employmentPeriod": {
+      "start": "2020-01-01",
+      "end": "2022-01-01"
+    },
+    "moOid": "1.2.643.5.1.13.13.12.2.77.7799",
+    "positionCode": "220",
+    "specialityCode": "1"
+  },
+  "patient": {
+    "patientId": "4",
+    "snils": "13594779916",
+    "fullName": {
+      "firstName": "Соловьев",
+      "lastName": "Роман",
+      "middleName": "Андреевич"
+    },
+    "gender": 1,
+    "birthDate": "1991-05-22",
+    "address": [
+      {
+        "typeCode": 1,
+        "text": "Ленинградская область, п. Мурино, ул.Оптиков, д.6, кв.101"
+      }
+    ],
+    "generalPractitionerMoOid": "1.2.643.5.1.13.13.12.2.77.7799"
+  },
+  "coverage": {
+    "policyTypeCode": 1,
+    "policyNumber": "1234567890123456",
+    "policyStatus": 1,
+    "validityPeriod": {
+      "start": "2020-01-01",
+      "end": "2022-01-01"
+    },
+    "medicalInsuranceOrganizationCode": "01003"
+  },
+  "serviceRequest": [
+    {
+      "serviceId": "590101000052171",
+      "serviceStatusCode": 2,
+      "serviceIntentCode": 2,
+      "servicePriorityCode": 2,
+      "serviceCode": "A05.01.002",
+      "authoredOn": "2020-09-10T14:07:18Z",
+      "desiredPeriod": {
+        "start": "2020-01-01T16:00:00Z",
+        "end": "2020-01-02T18:00:00Z"
+      },
+      "performerTypeCode": 1,
+      "performerDeviceId": "590101000000012",
+      "performerMoOid": "1.2.643.5.1.13.13.12.2.22.1748",
+      "reasonCode": "I64"
+    }
+  ]
+}

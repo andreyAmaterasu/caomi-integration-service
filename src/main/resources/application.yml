@@ -1,0 +1,96 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: caomi-intergration-service
+  # Настройки подключения к БД
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://${spring.datasource.databaseAddress};databaseName=${spring.datasource.databaseName}
+    databaseAddress: address
+    databaseName: database
+    username: user
+    password: password
+feign:
+  client:
+    config:
+      default:
+        # уровень логирования запросов/ответов в/от ЦАМИ
+        loggerLevel: NONE
+        # где: NONE - отсутсвие логирования
+        # BASIC - логируется только метод запроса и URL-адрес, а также код состояния ответа и время выполнения
+        # HEADERS - логируется основная информация вместе с заголовками запросов и ответов
+        # FULL - логируются заголовки, тело и метаданные для запросов и ответов.
+logging:
+  level:
+    root: info
+    ru:
+      hostco:
+        dvs:
+          mis:
+            caomi:
+              integration:
+                   service:
+                       feign: DEBUG
+  file:
+    path: logs
+    name: ${logging.file.path}/${spring.application.name}.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+jobs:
+  addDeviceJob:
+    cron: '0 */10 * * * *'
+  acceptReferralJob:
+    cron: '0 */10 * * * *'
+  reconciliationReferralJob:
+    cron: '0 */10 * * * *'
+  acceptAppointmentReferralJob:
+    cron: '0 */10 * * * *'
+app:
+  # url до внешней системы (ЦАМИ)
+  caomi:
+    url: url
+  # url до внешней системы (Сервис записи/appointment)
+  appointment:
+    url: url
+  # настройки endpoint-ов сервиса
+  endpoints:
+    result-referral-post:
+      # паттер-регулярное выражение для сбора закодированного заключения
+      conclusionRegexPattern: '.*'
+      # группа регулярного выражения, например <Data>(.*?)(hello)</Data>
+      # (группа - 0 - брать все выражение в качестве поиска,
+      #  группа - 1 - брать значение из первых скобок (.*?),
+      #  группа - 2 - брать значение из 2-ых скобок (hello),
+      #  и т.д. по-порядку)
+      group: 0
+      # тип контента, который брать для обработки заключения
+      contentType: 'html'
+  # JOB отправки данных о создании/обновлении данных по оборудованию
+  add-device-job:
+    sql:
+      offset: 0
+      limit: 0
+      deviceSql: ""
+  # JOB поиска и отправка данных о создании направления на инструментальное исследование
+  accept-referral-job:
+    sql:
+      offset: 0
+      limit: 0
+      referralSql: ""
+      patientSql: ""
+      serviceRequestSql: ""
+  # JOB поиска и отправки данных о информации о времени приема на инструментальное исследование
+  reconcilation-referral-job:
+    sql:
+      offset: 0
+      limit: 0
+      reconcilationReferralSql: ""
+  # JOB поиска и отправка данных рефералов в 'Сервис Записи'/'appointment'
+  accept-appointment-referral-job:
+    sql:
+      offset: 0
+      limit: 0
+      equipmentSlotsSql: ""
+      idPlaceSql: ""
+

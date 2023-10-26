@@ -1,0 +1,49 @@
+{
+  "idReferral": "18BC15B5-1EC4-4A8F-91F7-573E1C5AD459",
+  "referralNumber": "2",
+  "serviceResult": [
+    {
+      "serviceId": "serviceId",
+      "serviceCode": "serviceCode",
+      "effectiveDateTime": "2020-11-18T19:34:09+05:00",
+      "serviceResultId": "123",
+      "imagingStudy": [
+        {
+          "studyUid": "123"
+        }
+      ],
+      "issued": "2020-11-18T19:34:09+05:00",
+      "moOid": "1.2.643.5.1.13.13.12.2.77.7799",
+      "presentedForm": [
+        {
+          "contentType": "text/html",
+          "data": "data"
+        }
+      ],
+      "protocolStatusCode": 4,
+      "patientId": "00000000-0000-0000-0000-000000000000",
+      "practitioner": {
+        "medStaffId": "132",
+        "snils": "51425451454",
+        "fullName": {
+          "firstName": "Иван",
+          "lastName": "Иванов",
+          "middleName": "Иванович"
+        },
+        "gender": 1,
+        "birthDate": "1987-10-28"
+      },
+      "practitionerRole": {
+        "medStaffRoleId": "123",
+        "active": false,
+        "employmentPeriod": {
+          "start": "2010-02-04",
+          "end": "2021-02-04"
+        },
+        "moOid": "1.2.643.5.1.13.13.12.2.10.646.0.74614",
+        "positionCode": "220",
+        "specialityCode": "1"
+      }
+    }
+  ]
+}
